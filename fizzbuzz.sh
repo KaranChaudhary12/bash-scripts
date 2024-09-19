@@ -1,0 +1,28 @@
+#!/bin/bash 
+
+# KARAN CHAUDHARY 
+# SCRIPT TO PRINT NUMBER DIV BY 3 IS BUZZ, 5 IS FUZZ, 3 && 5 IS BUZZFUZZ
+
+# TAKING INPUT FROM THE USER
+read -p "ENTER THE NUMBER HERE : " num
+
+# MAKING A FUNCTION TO NUM UPTO INPUT
+print_num() {
+for ((i=1; i<=$num; i++))
+do
+
+# USING EMPTY VARIABLE AS OUTPUT TO STORE THE RESULT OF EACH NUMBER
+	output=""
+
+	# CHECKING NUM FOR DIV BY 3 AND 5 
+	(( $i % 3 == 0 )) && output+="BUZZ" # IF CONDITION IS TRUE THEN APPEND $output AS BUZZ
+	(( $i % 5 == 0 )) && output+="FUZZ" # IF CONDITION IS TRUE THEN APPEND $output AS FUZZ
+
+	# IF STRING IS EMPTY THEN PRINT VALUE OF $i
+	[[ -z "$output" ]] && output="$i" # -Z IS CHECKING FOR STRING EMPTY OR NOT 
+	echo "$output" # IF FALSE PRINT $output
+done 
+}
+# CALL THE PRINT_NUM FUNCTION 
+print_num
+
