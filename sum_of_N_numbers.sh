@@ -1,0 +1,25 @@
+#!/bin/bash 
+
+
+# KARAN CHAUDHARY #
+
+# WRITE A SCRIPT TO SUM OF FIRST N NATURAL NUMBERS USING WHILE LOOP.
+
+# TAKING INPUT FROM THE USER
+read -p "ENTER YOUR NUMBER HERE: " input
+
+# INITIALISING SUM AND COUNTER 
+sum=0
+counter=1
+
+# USING WHILE LOOP TO CALCULATE SUM OF FIRST N NATURAL NUMBERS 
+while [ "$counter" -le "$input" ]
+do
+	sum=$((sum + counter )) # ADD THE COUNTER TO SUM
+	counter=$(( counter + 1)) # INCREMENT THE COUNTER 
+done
+
+# PRINTING THE SUM 
+echo "THE SUM OF THE FIRST $input NUMBERS IS: $sum "
+
+
